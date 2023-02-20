@@ -1,0 +1,24 @@
+logging:
+  level:
+    br.com.orquestrador.hubfiscal: DEBUG
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: rabbitmq
+    password: rabbitmq
+  datasource:
+    url: jdbc:h2:mem:testdb;INIT=CREATE SCHEMA IF NOT EXISTS HUB_FISCAL_OWNER AUTHORIZATION sa
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+
+hub-fiscal:
+  queue: autorizar-venda-queue
+  data-execucao-sistema: 2022-11-11T15:47:10
+
+parceiros:
+  tributario.url: http://localhost:8080/tributo/{sku}
+  sefaz.url: http://localhost:8080/authorize
+  canal.url: http://localhost:8080/callback-venda
