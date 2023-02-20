@@ -49,7 +49,6 @@ public class ProcessarAutorizacaoVendaService {
             log.error("Ocorreu erro durante o processamento da venda {}\n{}", messagem, e);
         }
         informacoesVendaService.gravaAtualizaInformacoesVenda(toInformacoesVenda(informacoesVendaDto));
-        informacoesVendaService.listaTodasInformacoesVenda();
         log.debug("Gravou os dados da venda processada com sucesso no banco");
     }
 
